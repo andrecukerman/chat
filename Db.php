@@ -29,7 +29,7 @@ class Db {
     
     public function query ($str_query){
 
-        return $this->getAll($str_query);
+        return $this->db->query($str_query)->fetch_assoc();
     }
 
     public function insert($data){
