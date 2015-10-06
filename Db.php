@@ -26,6 +26,11 @@ class Db {
         }
         return $arr;
     }
+
+    public function getLastMsg($data){
+
+        return $this->getAll("SELECT msg, name, datetime FROM messages WHERE datetime > '".$data."'");
+    }
     
     public function query ($str_query){
 

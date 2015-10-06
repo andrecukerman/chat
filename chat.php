@@ -10,7 +10,7 @@ if(!empty($_POST['msg'])){
 	
 }
 if(!empty($_GET['msg'])){
-	$result = $db->getAll("SELECT msg, name, datetime FROM messages WHERE datetime > '".urldecode($_GET['msg']."'"));
+	$result = $db->getLastMsg(urldecode($_GET['msg']));
 	header("Content-Type: application/json");
 	echo json_encode($result);
 }
